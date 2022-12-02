@@ -6,21 +6,21 @@ date_default_timezone_set('America/Sao_Paulo');
 
 $name = $contact = $message = "";
 
-if (isset($_POST['email'])) {
+if (isset($_POST['email']) && $_POST['email'] != null) {
 
-    $myDate = date('m/d/Y H:i:s');
+    $myDate = date('d/m/Y H:i:s');
 
-    if (isset($_POST['name'])) {
-        $name = trim($_POST['name']);
+    if (isset($_POST['name']) && $_POST['name'] != null) {
+        $name =  filter_input(INPUT_POST,'name', FILTER_SANITIZE_SPECIAL_CHARS);
     }
-    if (isset($_POST['email'])) {
-        $email = trim($_POST['email']);
+    if (isset($_POST['email']) && $_POST['email'] != null) {
+        $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
     }
-    if (isset($_POST['contact'])) {
-        $contact = trim($_POST['contact']);
+    if (isset($_POST['contact']) && $_POST['contact'] != null) {
+        $contact = filter_input(INPUT_POST, 'contact', FILTER_SANITIZE_SPECIAL_CHARS);
     }
-    if (isset($_POST['message'])) {
-        $message = trim($_POST['message']);
+    if (isset($_POST['message']) && $_POST['message'] != null) {
+        $message = filter_input(INPUT_POST, 'message', FILTER_SANITIZE_SPECIAL_CHARS);
     }
 
 
@@ -48,7 +48,7 @@ if (isset($_POST['email'])) {
 			$mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
 			$mail->SMTPAuth   = true;                                   //Enable SMTP authentication
 			$mail->Username   = 'renatoguara2020@gmail.com';                     //SMTP username
-            $mail->Password = 'd';   // password is optional                            //SMTP password
+            $mail->Password = 'dt';   // password is optional                            //SMTP password
 			// $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         //Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
 			$mail->Port       = 587; 
 			$mail->CharSet = 'UTF-8';
