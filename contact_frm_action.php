@@ -2,7 +2,7 @@
 
 //ini_set('error_reporting', 'E_ALL'); 
 
-date_default_timezone_set('Asia/Calcutta');
+date_default_timezone_set('America/Sao_Paulo');
 
 $name = $contact = $message = "";
 
@@ -48,7 +48,7 @@ if (isset($_POST['email'])) {
 			$mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
 			$mail->SMTPAuth   = true;                                   //Enable SMTP authentication
 			$mail->Username   = 'renatoguara2020@gmail.com';                     //SMTP username
-            $mail->Password = '';   // password is optional                            //SMTP password
+            $mail->Password = 'd';   // password is optional                            //SMTP password
 			// $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         //Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
 			$mail->Port       = 587; 
 			$mail->CharSet = 'UTF-8';
