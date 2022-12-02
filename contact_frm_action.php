@@ -48,7 +48,7 @@ if (isset($_POST['email'])) {
 			$mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
 			$mail->SMTPAuth   = true;                                   //Enable SMTP authentication
 			$mail->Username   = 'renatoguara2020@gmail.com';                     //SMTP username
-            $mail->Password = 'dtki';   // password is optional                            //SMTP password
+            $mail->Password = '';   // password is optional                            //SMTP password
 			// $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         //Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
 			$mail->Port       = 587; 
 			$mail->CharSet = 'UTF-8';
@@ -63,7 +63,7 @@ if (isset($_POST['email'])) {
 
 
         $mail->addAddress('renatoguara2019@yahoo.com', 'bootstrapfriendly');
-        $mail->addAddress('renatoguara2020@outlook.com', 'bootstrapfriendly');
+        $mail->addAddress('renatoguara2020@gmail.com', 'bootstrapfriendly');
 
 
         //Put the submitter's address in a reply-to header
